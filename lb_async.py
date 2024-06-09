@@ -14,7 +14,7 @@ class BackendList:
 		self.servers.append(('127.0.0.1',9003))
 		self.servers.append(('127.0.0.1',9004))
 		self.servers.append(('127.0.0.1',9005))
-		
+
 		self.current=0
 	def getserver(self):
 		s = self.servers[self.current]
@@ -46,7 +46,7 @@ class Backend(asyncore.dispatcher_with_send):
 
 class ProcessTheClient(asyncore.dispatcher):
 	def handle_read(self):
-		data = self.recv(32)
+		data = self.recv(1024)
 		if data:
 			self.backend.client_socket = self
 			self.backend.send(data)

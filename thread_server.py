@@ -31,7 +31,7 @@ class ProcessTheClient(threading.Thread):
 						hasil = httpserver.proses(rcv)
 						#hasil akan berupa bytes
 						#untuk bisa ditambahi dengan string, maka string harus di encode
-						hasil=hasil+"\r\n\r\n".encode()
+						# hasil=hasil+"\r\n\r\n".encode()
 						# logging.warning("balas ke  client: {}" . format(hasil))
 						#hasil sudah dalam bentuk bytes
 						self.connection.sendall(hasil)

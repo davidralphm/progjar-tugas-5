@@ -20,7 +20,7 @@ class ProcessTheClient(asyncore.dispatcher_with_send):
 				#logging.warning("data dari client: {}".format(rcv))
 				hasil = httpserver.proses(rcv)
 				#hasil sudah dalam bentuk bytes
-				hasil = hasil + "\r\n\r\n".encode()
+				# hasil = hasil + "\r\n\r\n".encode()
 				#agar bisa dioperasikan dengan string \r\n\r\n maka harus diencode dulu => bytes
 
 				#nyalakan ketika proses debugging saja, jika sudah berjalan, matikan
