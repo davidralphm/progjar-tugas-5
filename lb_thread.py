@@ -58,7 +58,8 @@ class ProcessTheClient(threading.Thread):
 					break
 
 			except Exception as e:
-				print(str(e))
+				#print(str(e))
+				pass
 
 		# To client
 		while True:
@@ -76,7 +77,8 @@ class ProcessTheClient(threading.Thread):
 					break
 
 			except Exception as e:
-				print(str(e))
+				#print(str(e))
+				pass
 
 		self.backend_sock.close()
 		self.connection.close()
@@ -111,7 +113,7 @@ class Server(threading.Thread):
 				ProcessTheClient(connection, client_address, backend_sock).start()
 				#logging.warning("connection from {}".format(client_address))
 			except Exception as err:
-				logging.error(err)
+				#logging.error(err)
 				pass
 
 
