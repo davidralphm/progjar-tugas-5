@@ -38,7 +38,7 @@ class Server(asyncore.dispatcher):
 		asyncore.dispatcher.__init__(self)
 		self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
 		self.set_reuse_addr()
-		self.bind(('',portnumber))
+		self.bind(('0.0.0.0',portnumber))
 		self.listen(5)
 		#logging.warning("running on port {}" . format(portnumber))
 
