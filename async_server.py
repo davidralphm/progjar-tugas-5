@@ -40,13 +40,13 @@ class Server(asyncore.dispatcher):
 		self.set_reuse_addr()
 		self.bind(('',portnumber))
 		self.listen(5)
-		logging.warning("running on port {}" . format(portnumber))
+		#logging.warning("running on port {}" . format(portnumber))
 
 	def handle_accept(self):
 		pair = self.accept()
 		if pair is not None:
 			sock, addr = pair
-			logging.warning("connection from {}" . format(repr(addr)))
+			#logging.warning("connection from {}" . format(repr(addr)))
 			handler = ProcessTheClient(sock)
 
 def main():
