@@ -95,7 +95,7 @@ class Server(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		self.my_socket.bind(('0.0.0.0', 44444))
+		self.my_socket.bind(('0.0.0.0', 55555))
 		self.my_socket.listen(1)
 
 		while True:
